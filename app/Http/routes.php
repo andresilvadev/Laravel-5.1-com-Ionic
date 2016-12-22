@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'admin','as' => 'admin.'], function(){
+
+    Route::get('categories',['as' => 'categories.index','uses' => 'CategoriesController@index']);
+    Route::get('categories/create',['as' => 'categories.create','uses' => 'CategoriesController@create']);
+    Route::post('categories/store',['as' => 'categories.store','uses' => 'CategoriesController@store']);
+    Route::get('categories/edit/{id}',['as' => 'categories.edit','uses' => 'CategoriesController@edit']);
+    Route::get('categories/update/{id}',['as' => 'categories.update','uses' => 'CategoriesController@update']);
+    Route::get('categories/destroy/{id}',['as' => 'categories.destroy','uses' => 'CategoriesController@destroy']);
+
+});

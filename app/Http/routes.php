@@ -54,7 +54,7 @@ Route::group(['prefix' => 'admin','as' => 'admin.', 'middleware' => 'auth.checkr
 
 });
 
-Route::group(['prefix' => 'customer','as' => 'customer.'], function(){
+Route::group(['prefix' => 'customer','as' => 'customer.', 'middleware' => 'auth.checkrole:client'], function(){
 
     Route::get('order',['as' => 'order.index','uses' => 'CheckoutController@index']);
     Route::get('order/create',['as' => 'order.create','uses' => 'CheckoutController@create']);

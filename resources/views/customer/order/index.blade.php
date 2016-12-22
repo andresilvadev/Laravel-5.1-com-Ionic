@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="container">
-        <h1>Meus Pedidos</h1>
+        <h1>Meus pedidos</h1>
 
         @include('errors._check')
         <div class="container">
-            <a href="{{ route('customer.order.create') }}" class="btn btn-primary">Novo Pedido</a>
+            <a href="{{ route('customer.order.create') }}" class="btn btn-primary">Novo pedido</a>
 
             <br><br>
 

@@ -2,6 +2,7 @@
 
 namespace CodeDelivery\Http\Controllers;
 
+use CodeDelivery\Http\Requests\CategoryRequest;
 use CodeDelivery\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 
@@ -48,7 +49,7 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         $data = $request->all();
         $this->repository->create($data);
@@ -87,7 +88,7 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
         $data = $request->all();
         $this->repository->update($data, $id);

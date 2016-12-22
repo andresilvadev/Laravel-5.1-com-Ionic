@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="row">
-        <h1>Listagem de Produtos</h1>
+        <h1>Listagem de produtos</h1>
         <div class="form-group">
-            <a href="{{route('admin.products.create')}}" class="btn btn-primary">Nova Produto</a>
+            <a href="{{route('admin.products.create')}}" class="btn btn-primary">Nova produto</a>
         </div>
         <table class="table table-hover table-bordered table-responsive table-striped">
             <thead>

@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="row">
-        <h1>Novo Produto</h1>
+        <h1>Novo produto</h1>
         @include('errors._check')
         <div class="form-group">
-            <a href="{{route('admin.products.index')}}" class="btn btn-primary">Listagem de Produtos</a>
+            <a href="{{route('admin.products.index')}}" class="btn btn-primary">Listagem de produtos</a>
         </div>
         {!! Form::open(['route'=>'admin.products.store']) !!}
         @include('admin.products._form')

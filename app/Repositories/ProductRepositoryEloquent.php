@@ -14,6 +14,11 @@ use CodeDelivery\Validators\ProductValidator;
  */
 class ProductRepositoryEloquent extends BaseRepository implements ProductRepository
 {
+    public function listar()
+    {
+        return $this->model->get(['id','name','price']);
+    }
+
     /**
      * Specify Model class name
      *

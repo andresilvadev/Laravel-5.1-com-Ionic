@@ -2,6 +2,10 @@
 
 namespace CodeDelivery\Http\Controllers;
 
+use CodeDelivery\Repositories\OrderRepository;
+use CodeDelivery\Repositories\ProductRepository;
+use CodeDelivery\Repositories\UserRepository;
+use CodeDelivery\Services\OrderService;
 use Illuminate\Http\Request;
 
 use CodeDelivery\Http\Requests;
@@ -9,6 +13,33 @@ use CodeDelivery\Http\Controllers\Controller;
 
 class CheckoutController extends Controller
 {
+
+    /**
+     * @var OrderRepository
+     */
+    private $orderRepository;
+    /**
+     * @var UserRepository
+     */
+    private $userRepository;
+    /**
+     * @var ProductRepository
+     */
+    private $productRepository;
+    /**
+     * @var OrderService
+     */
+    private $orderService;
+
+
+    public function __construct(OrderRepository $orderRepository, UserRepository $userRepository, ProductRepository $productRepository, OrderService $orderService)
+    {
+        $this->orderRepository = $orderRepository;
+        $this->userRepository = $userRepository;
+        $this->productRepository = $productRepository;
+        $this->orderService = $orderService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +57,9 @@ class CheckoutController extends Controller
      */
     public function create()
     {
-        //
+        $products = $this->productRepository->listar();
+
+        return view('customer.order.create', compact('products'));
     }
 
     /**

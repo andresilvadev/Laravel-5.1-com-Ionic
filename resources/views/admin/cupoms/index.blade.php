@@ -4,7 +4,7 @@
     <div class="row">
         <h1>Cupoms</h1>
         <div class="form-group">
-            <a href="{{ route('admin.cupoms.create') }}" class="btn btn-primary">Novo Cupom</a>
+            <a href="{{ route('admin.cupoms.create') }}" class="btn btn-primary">Novo cupom</a>
         </div>
         <table class="table table-hover table-bordered table-responsive table-striped">
             <thead>

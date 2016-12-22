@@ -2,6 +2,8 @@
 
 namespace CodeDelivery\Http\Controllers;
 
+use CodeDelivery\Repositories\OrderRepository;
+use CodeDelivery\Repositories\UserRepository;
 use Illuminate\Http\Request;
 
 use CodeDelivery\Http\Requests;
@@ -10,13 +12,25 @@ use CodeDelivery\Http\Controllers\Controller;
 class OrdersController extends Controller
 {
     /**
+     * @var OrderRepository
+     */
+    private $orderRepository;
+
+    public function __construct(OrderRepository $orderRepository)
+    {
+        $this->orderRepository = $orderRepository;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $orders = $this->orderRepository->paginate();
+
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**
@@ -57,9 +71,18 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, UserRepository $userRepository)
     {
-        //
+        $list_status = [
+            0 => 'Pendende',
+            1 => 'A caminho',
+            2 => 'Entregue',
+            3 => 'Cancelado'
+        ];
+        $order = $this->orderRepository->find($id);
+        $deliveryman = $userRepository->lists('name','id');
+
+        return view('admin.orders.edit', compact('order','list_status','deliveryman'));
     }
 
     /**
@@ -71,7 +94,10 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $all = $request->all();
+        $this->orderRepository->update($all, $id);
+
+        return redirect()->route('admin.orders.index');
     }
 
     /**

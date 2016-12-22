@@ -2,6 +2,8 @@
 
 namespace CodeDelivery\Http\Controllers;
 
+use CodeDelivery\Http\Requests\CupomRequest;
+use CodeDelivery\Repositories\CupomRepository;
 use Illuminate\Http\Request;
 
 use CodeDelivery\Http\Requests;
@@ -10,13 +12,25 @@ use CodeDelivery\Http\Controllers\Controller;
 class CupomsController extends Controller
 {
     /**
+     * @var CupomRepository
+     */
+    private $cupomRepository;
+
+    public function __construct(CupomRepository $cupomRepository)
+    {
+        $this->cupomRepository = $cupomRepository;
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $cupoms = $this->cupomRepository->paginate(10);
+
+        return view('admin.cupoms.index', compact('cupoms'));
     }
 
     /**
@@ -26,7 +40,7 @@ class CupomsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.cupoms.create');
     }
 
     /**
@@ -35,9 +49,12 @@ class CupomsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CupomRequest $request)
     {
-        //
+        $data = $request->all();
+        $this->cupomRepository->create($data);
+
+        return redirect()->route('admin.cupoms.index');
     }
 
     /**
@@ -59,7 +76,9 @@ class CupomsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cupom = $this->cupomRepository->find($id);
+
+        return view('admin.cupoms.edit', compact('cupom'));
     }
 
     /**
@@ -69,9 +88,12 @@ class CupomsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CupomRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $this->cupomRepository->update($data, $id);
+
+        return redirect()->route('admin.cupoms.index');
     }
 
     /**
@@ -82,6 +104,8 @@ class CupomsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->cupomRepository->delete($id);
+
+        return redirect()->route('admin.cupoms.index');
     }
 }

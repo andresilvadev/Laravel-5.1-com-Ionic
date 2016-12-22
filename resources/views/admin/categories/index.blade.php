@@ -4,7 +4,7 @@
     <div class="row">
         <h1>Categorias</h1>
         <div class="form-group">
-            <a href="{{route('admin.categories.create')}}" class="btn btn-primary">Nova Categoria</a>
+            <a href="{{route('admin.categories.create')}}" class="btn btn-primary">Nova categoria</a>
         </div>
         <table class="table table-hover table-bordered table-responsive table-striped">
             <thead>

@@ -24,4 +24,11 @@ Route::group(['prefix' => 'admin','as' => 'admin.'], function(){
     Route::post('categories/update/{id}',['as' => 'categories.update','uses' => 'CategoriesController@update']);
     Route::get('categories/destroy/{id}',['as' => 'categories.destroy','uses' => 'CategoriesController@destroy']);
 
+    Route::get('products',['as' => 'products.index','uses' => 'ProductsController@index']);
+    Route::get('products/create',['as' => 'products.create','uses' => 'ProductsController@create']);
+    Route::post('products/store',['as' => 'products.store','uses' => 'ProductsController@store']);
+    Route::get('products/edit/{id}',['as' => 'products.edit','uses' => 'ProductsController@edit']);
+    Route::post('products/update/{id}',['as' => 'products.update','uses' => 'ProductsController@update']);
+    Route::get('products/destroy/{id}',['as' => 'products.destroy','uses' => 'ProductsController@destroy']);
+
 });

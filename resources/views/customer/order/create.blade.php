@@ -16,7 +16,7 @@
                     <dd><h3 id="total"></h3></dd>
                 </dl>
 
-                <a href="#" class="btn btn-default" id="js-btn-novo-item">Novo item</a>
+                <a href="#" class="btn btn-success" id="js-btn-novo-item">Novo item</a>
 
                 <br><br>
                 <table class="table table-bordered">
@@ -29,9 +29,9 @@
                     <tbody>
                     <tr>
                         <td>
-                            <select class="form-control" name="items[0][product_id]" >
+                            <select class="form-control" name="items[0][product_id]">
                                 @foreach($products as $product)
-                                    <option value="{{ $product->id }}" data-price="{{ $product->price }}"> {{ $product->name }} --- {{ $product->price }}</option>
+                                    <option value="{{ $product->id }}" data-price="{{ $product->price }}"> {{ $product->name }} --- R$ {{ $product->price }}</option>
                                 @endforeach
                             </select>
                         </td>

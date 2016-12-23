@@ -70,12 +70,14 @@ class ClientCheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $clientId = $this->userRepository->find(Auth::user()->id)->client->id;
-        $data['client_id'] = $clientId;
-        $this->orderService->create($data);
+        $data = $request->all(); // Variavel data armazenda todos os campos da request
+        $id = Authorizer::getResourceOwnerId(); // Pega o id do usuario que acessa a api
+        $clientId = $this->userRepository->find($id)->client->id; //Busca o cliente pelo id do usuário
+        $data['client_id'] = $clientId; // Campo client_id da request armazena o id do client
+        $object = $this->orderService->create($data); // Cria uma nova ordem passando o $data
+        $object = $this->orderRepository->with(['items'])->find($object->id); // Consulta a order com os itens inclusos
 
-        return redirect()->route('customer.order.index');
+        return $object;
     }
 
     /**

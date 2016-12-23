@@ -67,6 +67,31 @@ Route::group(['prefix' => 'customer','as' => 'customer.', 'middleware' => 'auth.
 });
 
 Route::group(['prefix' => 'api','as' => 'api.', 'middleware' => 'oauth'], function(){
+
+    Route::group(['prefix' => 'client','as' => 'client.'], function(){
+
+        Route::get('pedidos', function(){
+            return [
+                'id' => 1,
+                'client' => 'Nome do cliente',
+                'total' => 10
+            ];
+        });
+
+    });
+
+    Route::group(['prefix' => 'deliveryman','as' => 'deliveryman.'], function(){
+
+        Route::get('pedidos', function(){
+            return [
+                'id' => 1,
+                'client' => 'Nome do entregador',
+                'total' => 10
+            ];
+        });
+
+    });
+
     Route::get('pedidos', function(){
         return [
             'id' => 1,

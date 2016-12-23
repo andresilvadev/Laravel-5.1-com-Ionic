@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use CodeDelivery\Http\Requests;
 use CodeDelivery\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use LucaDegasperi\OAuth2Server\Facades\Authorizer;
 
 class ClientCheckoutController extends Controller
 {
@@ -48,14 +49,16 @@ class ClientCheckoutController extends Controller
      */
     public function index()
     {
-        $clientId = $this->userRepository->find(Auth::user()->id)->client->id;
+        $id = Authorizer::getResourceOwnerId();
 
-        //Buscando todas as ordens do cliente que estiver logado
-        $orders = $this->orderRepository->scopeQuery(function($query) use($clientId){
+        $clientId = $this->userRepository->find($id)->client->id;
+
+        //Buscando todas as ordens do cliente que estiver logado -> E incluir um with para acrencentar a relacao de itens na consulta
+        $orders = $this->orderRepository->with(['items'])->scopeQuery(function($query) use($clientId){
             return $query->where('client_id', '=', $clientId);
-        })->paginate(10);
+        })->paginate();
 
-        return view('customer.order.index', compact('orders'));
+        return $orders;
     }
 
 

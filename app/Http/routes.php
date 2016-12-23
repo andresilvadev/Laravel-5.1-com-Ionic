@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('oauth/access_token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
+
 Route::group(['prefix' => 'admin','as' => 'admin.', 'middleware' => 'auth.checkrole:admin'], function(){
 
     Route::get('categories',['as' => 'categories.index','uses' => 'CategoriesController@index']);

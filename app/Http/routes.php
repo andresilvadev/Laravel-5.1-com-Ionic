@@ -65,3 +65,13 @@ Route::group(['prefix' => 'customer','as' => 'customer.', 'middleware' => 'auth.
     Route::post('order/store',['as' => 'order.store','uses' => 'CheckoutController@store']);
 
 });
+
+Route::group(['prefix' => 'api','as' => 'api.', 'middleware' => 'oauth'], function(){
+    Route::get('pedidos', function(){
+        return [
+            'id' => 1,
+            'client' => 'Andre Silva',
+            'total' => 10
+         ];
+    });
+});

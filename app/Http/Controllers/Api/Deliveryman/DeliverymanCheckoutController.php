@@ -63,11 +63,10 @@ class DeliverymanCheckoutController extends Controller
      */
     public function show($id)
     {
-        $object = $this->orderRepository->with(['client','items','cupom'])->find($id);
-        $object->items->each(function($item){
-           $item->product;
-        });
-        return $object;
+        $idDeliveryman = Authorizer::getResourceOwnerId();
+
+        return $this->orderRepository->getByIdAndDeliveryman($id, $idDeliveryman);
+
     }
 
 }

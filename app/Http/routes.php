@@ -76,7 +76,7 @@ Route::group(['prefix' => 'api','as' => 'api.', 'middleware' => 'oauth'], functi
 
     Route::group(['prefix' => 'deliveryman','as' => 'deliveryman.', 'middleware' => 'oauth.checkrole:deliveryman'], function(){
 
-        Route::get('pedidos', function(){ });
+        Route::resource('order', 'Api\Deliveryman\DeliverymanCheckoutController', ['except' => ['create', 'store', 'edit','destroy']]);
 
     });
 

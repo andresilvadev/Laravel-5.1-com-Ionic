@@ -34,7 +34,6 @@ class ClientCheckoutController extends Controller
      */
     private $orderService;
 
-
     private $with = ['client','cupom','items'];
 
     public function __construct(OrderRepository $orderRepository, UserRepository $userRepository, ProductRepository $productRepository, OrderService $orderService)

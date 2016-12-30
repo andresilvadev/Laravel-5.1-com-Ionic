@@ -4,6 +4,7 @@ namespace CodeDelivery\Repositories;
 
 use CodeDelivery\Presenters\OrderPresenter;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use CodeDelivery\Repositories\OrderRepository;
@@ -25,11 +26,17 @@ class OrderRepositoryEloquent extends BaseRepository implements OrderRepository
             'user_deliveryman_id' => $idDeliveryman
         ]);
 
-        $result = $result->first();    // Recupera o primeiro resultado
-        if ($result){
-            $result->items->each(function($item){  // Para cada item mostra os produtos
-                $item->product;
-            });
+
+        if ($result instanceof Collection){
+            $result = $result->first();    // Recupera o primeiro resultado
+        }else{
+            if(isset($result['data']) && count($result['data']) == 1){
+                $result = [
+                    'data' => $result['data'][0],
+                ];
+            }else{
+                throw new ModelNotFoundException("Order não existe");
+            }
         }
 
         return $result;

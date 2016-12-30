@@ -11,8 +11,8 @@ use CodeDelivery\Models\Order;
  */
 class OrderTransformer extends TransformerAbstract
 {
-    protected $defaultIncludes = ['cupom'];
-    protected $availableIncludes = [];
+    //protected $defaultIncludes = ['cupom','items']; // Carrega todos os dados por default
+    protected $availableIncludes = ['cupom','items']; // Carrega somente os dados necessários, indicado sobre demanda
 
     /**
      * Transform the \Order entity
@@ -40,5 +40,10 @@ class OrderTransformer extends TransformerAbstract
             return null;
         };
         return $this->item($model->cupom, new CupomTransformer());
+    }
+
+    public function includeItems(Order $model)
+    {
+        return $this->collection($model->items, new OrderItemTransformer());
     }
 }

@@ -35,6 +35,8 @@ class ClientCheckoutController extends Controller
     private $orderService;
 
 
+    private $with = ['client','cupom','items'];
+
     public function __construct(OrderRepository $orderRepository, UserRepository $userRepository, ProductRepository $productRepository, OrderService $orderService)
     {
         $this->orderRepository = $orderRepository;
@@ -55,7 +57,10 @@ class ClientCheckoutController extends Controller
         $clientId = $this->userRepository->find($id)->client->id;
 
         //Buscando todas as ordens do cliente que estiver logado -> E incluir um with para acrencentar a relacao de itens na consulta
-        $orders = $this->orderRepository->with(['items'])->scopeQuery(function($query) use($clientId){
+        $orders = $this->orderRepository
+            ->skipPresenter(false)
+            ->with($this->with)
+            ->scopeQuery(function($query) use($clientId){
             return $query->where('client_id', '=', $clientId);
         })->paginate();
 
@@ -76,9 +81,12 @@ class ClientCheckoutController extends Controller
         $clientId = $this->userRepository->find($id)->client->id; //Busca o cliente pelo id do usuário
         $data['client_id'] = $clientId; // Campo client_id da request armazena o id do client
         $object = $this->orderService->create($data); // Cria uma nova ordem passando o $data
-        $object = $this->orderRepository->with(['items'])->find($object->id); // Consulta a order com os itens inclusos
+        //$object = $this->orderRepository->with(['items'])->find($object->id); // Consulta a order com os itens inclusos
 
-        return $object;
+        return $this->userRepository
+            ->skipPresenter(false)
+            ->with($this->with)
+            ->find($object->id);
     }
 
     /**
@@ -89,7 +97,10 @@ class ClientCheckoutController extends Controller
      */
     public function show($id)
     {
-        $object = $this->orderRepository->with(['client','items','cupom'])->find($id);
+        $object = $this->orderRepository
+            ->skipPresenter(false)
+            ->with($this->with)
+            ->find($id);
 //        $object->items->each(function($item){
 //           $item->product;
 //        });

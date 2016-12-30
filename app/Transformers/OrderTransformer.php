@@ -33,6 +33,12 @@ class OrderTransformer extends TransformerAbstract
         ];
     }
 
+    public function includeClient(Order $model)
+    {
+        return $this->item($model->client, new ClientTransformer());
+    }
+
+
     /* Método para serealizar o relacionamento */
     public function includeCupom(Order $model)
     {

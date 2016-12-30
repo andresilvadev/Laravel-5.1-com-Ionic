@@ -22,12 +22,13 @@ class OrderRepositoryEloquent extends BaseRepository implements OrderRepository
             'user_deliveryman_id' => $idDeliveryman
         ]);
 
-        if($result instanceof Collection){ // Verifica se é uma instancia de collection
-            $result = $result->first();    // Recupera o primeiro resultado
+        $result = $result->first();    // Recupera o primeiro resultado
+        if ($result){
             $result->items->each(function($item){  // Para cada item mostra os produtos
                 $item->product;
             });
         }
+
         return $result;
 
     }

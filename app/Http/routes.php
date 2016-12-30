@@ -78,6 +78,7 @@ Route::group(['prefix' => 'api','as' => 'api.', 'middleware' => 'oauth'], functi
 
         Route::resource('order', 'Api\Deliveryman\DeliverymanCheckoutController', ['except' => ['create', 'store', 'edit','destroy']]);
 
+        Route::patch('order/{id}/update-status', ['as' => 'orders.update_status','uses' => 'Api\Deliveryman\DeliverymanCheckoutController@updateStatus']);
     });
 
 });

@@ -26,7 +26,7 @@ class CheckoutRequest extends Request
         $rules = ['cupom_code' => 'exists:cupoms,code,used,0'];
 
         $this->buildRulesItems(0, $rules);
-        $items = $request->get('items');
+        $items = $request->get('items',[]);
         $items = !is_array($items)? [] : $items;
 
         foreach ($items as $key => $val){

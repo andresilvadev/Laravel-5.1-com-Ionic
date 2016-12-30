@@ -11,6 +11,8 @@ use CodeDelivery\Models\Order;
  */
 class OrderTransformer extends TransformerAbstract
 {
+    protected $defaultIncludes = ['cupom'];
+    protected $availableIncludes = [];
 
     /**
      * Transform the \Order entity
@@ -21,7 +23,7 @@ class OrderTransformer extends TransformerAbstract
     public function transform(Order $model)
     {
         return [
-            'id'         => (int) $model->id,
+            'id'    => (int) $model->id,
             'total' => (float) $model->total,
 
             /* place your other model properties here */
@@ -29,5 +31,14 @@ class OrderTransformer extends TransformerAbstract
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
         ];
+    }
+
+    /* Método para serealizar o relacionamento */
+    public function includeCupom(Order $model)
+    {
+        if(!$model->cupom){
+            return null;
+        };
+        return $this->item($model->cupom, new CupomTransformer());
     }
 }

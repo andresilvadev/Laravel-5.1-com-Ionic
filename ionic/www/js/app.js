@@ -23,7 +23,21 @@ angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','angular-oauth
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider){
+.config(function($stateProvider, $urlRouterProvider, OAuthProvider, OAuthTokenProvider){
+
+    OAuthProvider.configure({   // Provider de configuração url base, para o oAuth2
+        baseUrl: 'https://localhost:8000',
+        clientId: 'appid1',
+        clientSecret: 'secret' // optional
+    });
+
+    OAuthTokenProvider.configure({  // Provider que vai gerar o serviço do token da  aplicação
+        name: 'token',
+        options: {
+            secure: true   // Secure -> true, incriptação para https somente para produção,
+                           // Secure -> false, para permitir authenticação em desenvolvimento
+        }
+    });
 
     $urlRouterProvider.otherwise('/');// Se digitar uma rota inexistente, forca a cair numa rota default
 

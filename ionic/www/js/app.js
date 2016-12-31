@@ -24,12 +24,13 @@ angular.module('starter', ['ionic'])
 })
 
 .config(function($stateProvider){
-    $stateProvider.state('home',{
-      url: '/home',
-      templateUrl: 'templates/home.html'
+    $stateProvider
+      .state('home',{
+        url: '/home',
+        templateUrl: 'templates/home.html'
     })
       .state('main',{
-          url: '/',
-          templateUrl: 'templates/main.html'
+        url: '/',
+        templateUrl: 'templates/main.html'
     })
 });

@@ -42,22 +42,10 @@ angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','angular-oauth
     $urlRouterProvider.otherwise('/');// Se digitar uma rota inexistente, forca a cair numa rota default
 
     $stateProvider
-      .state('home',{
-          url: '/home/:nome',
-          templateUrl: 'templates/home.html',
-          controller: 'HomeCtrl'
-      })
-        .state('home.a',{
-            url: '/a',
-            templateUrl: 'templates/home-a.html'
-        })
-        .state('home.b',{
-            url: '/b',
-            templateUrl: 'templates/home-b.html'
-        })
+        .state('login',{
+            url: '/login',
+            templateUrl: 'templates/login.html',
+            controller: 'LoginCtrl'
+       });
 
-      .state('main',{
-          url: '/',
-          templateUrl: 'templates/main.html'
-      })
 });

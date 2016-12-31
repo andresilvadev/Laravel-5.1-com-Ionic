@@ -23,7 +23,10 @@ angular.module('starter', ['ionic'])
   });
 })
 
-.config(function($stateProvider){
+.config(function($stateProvider, $urlRouterProvider){
+
+    $urlRouterProvider.otherwise('/');// Se digitar uma rota inexistente, forca a cair numa rota default
+
     $stateProvider
       .state('home',{url: '/home',templateUrl: 'templates/home.html'})
         .state('home.a',{url: '/a',templateUrl: 'templates/home-a.html'})

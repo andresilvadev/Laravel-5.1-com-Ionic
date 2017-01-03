@@ -26,7 +26,7 @@ angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','angular-oauth
 .config(function($stateProvider, $urlRouterProvider, OAuthProvider, OAuthTokenProvider){
 
     OAuthProvider.configure({   // Provider de configuração url base, para o oAuth2
-        baseUrl: 'https://localhost:8000',
+        baseUrl: 'http://localhost:8000',
         clientId: 'appid1',
         clientSecret: 'secret', // optional
         grantPath: '/oauth/access_token' // rota na api para recuperar o token

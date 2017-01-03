@@ -1,5 +1,5 @@
 angular.module('deliveryApp.controllers',[])
-    .controller('LoginCtrl',['$scope','OAuth', function ($scope,OAuth) {
+    .controller('LoginCtrl',['$scope','OAuth','$cookies', function ($scope,OAuth,$cookies) {
 
         $scope.user = {     // Garantindo que os campos do formulário estejam vázios
             username: '',
@@ -9,7 +9,9 @@ angular.module('deliveryApp.controllers',[])
         $scope.login = function () {
             OAuth.getAccessToken($scope.user)
                 .then(function (data) { // Se houver sucesso
-                console.log("login funcionando");
+                console.log(data);                ;
+                console.log($cookies.getObject('token'));
+
             }, function (responseError) {    // Se houver fracasso
 
             })

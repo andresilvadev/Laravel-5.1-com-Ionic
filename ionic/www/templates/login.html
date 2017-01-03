@@ -1,6 +1,21 @@
 <ion-view>
-    <ion-nav-title>DELIVERY DAY - Login</ion-nav-title>
+    <ion-nav-title>Delivery Smart - Login</ion-nav-title>
+
     <ion-content class="padding">
-        Formulario de login
+        <div class="list">
+            <form name="form" ng-submit="login()">
+                <label class="item item-input">
+                    <input type="text" name="username" placeholder="Username" ng-model="user.username">
+                </label>
+
+                <label class="item item-input">
+                    <input type="text" name="password" placeholder="Password" ng-model="user.password">
+                </label>
+
+                <button class="button button-full button-positive" type="submit">
+                    Login
+                </button>
+            </form>
+        </div>
     </ion-content>
 </ion-view>

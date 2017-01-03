@@ -22,6 +22,7 @@ Route::group(['middleware' => 'cors'], function(){
     });
 
     Route::group(['prefix' => 'api','as' => 'api.', 'middleware' => 'oauth'], function(){
+        Route::get('user/authenticated', 'UsersController@authenticated');
 
         Route::group(['prefix' => 'client','as' => 'client.', 'middleware' => 'oauth.checkrole:client'], function(){
 

@@ -54,6 +54,27 @@ angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','angular-oauth
             controller: function ($scope) {
 
             }
-        });
+        })
+        .state('client',{   // Criando uma rota abstrata, serve para intermediar o fluxo, e portanto não pode ser acessada
+            abstract: true,
+            url: '/client',
+            template: '<ui-view/>'
+        })
+        .state('client.checkout',{
+            url: '/checkout',
+            templateUrl: 'templates/client/checkout.html',
+            controller: 'ClientCheckoutCtrl'
+        })
+        .state('client.checkout_item_detail',{
+            url: '/checkout/detail/:index',
+            templateUrl: 'templates/client/checkout_item_detail.html',
+            controller: 'ClientCheckoutDetailCtrl'
+        })
+        .state('client.view_products',{
+            url: '/view_products',
+            templateUrl: 'templates/client/view_products.html',
+            controller: 'ClientViewProductsCtrl'
+        })
+    ;
 
 });

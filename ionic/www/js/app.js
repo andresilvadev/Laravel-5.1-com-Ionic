@@ -9,6 +9,10 @@ angular.module('deliveryApp.controllers',[]); // Criando módulo de controllers
 
 angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','angular-oauth2'])
 
+.constant('appConfig',{
+    baseUrl: 'http://localhost:8000'
+})
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -27,10 +31,10 @@ angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','angular-oauth
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, OAuthProvider, OAuthTokenProvider){
+.config(function($stateProvider, $urlRouterProvider, OAuthProvider, OAuthTokenProvider, appConfig){
 
     OAuthProvider.configure({   // Provider de configuração url base, para o oAuth2
-        baseUrl: 'http://localhost:8000',
+        baseUrl: appConfig.baseUrl,
         clientId: 'appid1',
         clientSecret: 'secret', // optional
         grantPath: '/oauth/access_token' // rota na api para recuperar o token

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5afd1ee0-d05c-4d21-9fda-6b5fe1944a50" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ionic/www/index.html" afterPath="$PROJECT_DIR$/ionic/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ionic/www/js/app.js" afterPath="$PROJECT_DIR$/ionic/www/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ionic/www/js/controllers/login.controller.js" afterPath="$PROJECT_DIR$/ionic/www/js/controllers/login.controller.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15447,8 +15448,38 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ionic/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="75" column="43" lean-forward="false" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+            <state relative-caret-position="582">
+              <caret line="77" column="24" lean-forward="false" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkout.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ionic/www/js/controllers/client/checkout.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="checkout-detail.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ionic/www/js/controllers/client/checkout-detail.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view-product.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ionic/www/js/controllers/client/view-product.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" column="39" lean-forward="false" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -15467,14 +15498,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/admin/orders/edit.blade.php" />
-        <option value="$PROJECT_DIR$/database/factories/ModelFactory.php" />
-        <option value="$PROJECT_DIR$/database/seeds/CupomTableSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CupomsController.php" />
-        <option value="$PROJECT_DIR$/database/seeds/OrderTableSeeder.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/cupoms/_form.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/cupoms/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/cupoms/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/cupoms/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Repositories/ProductRepositoryEloquent.php" />
         <option value="$PROJECT_DIR$/resources/views/customer/order/create.blade.php" />
@@ -15508,7 +15531,6 @@
         <option value="$PROJECT_DIR$/ionic/www/js/controllers/home-controller.js" />
         <option value="$PROJECT_DIR$/ionic/www/templates/main.html" />
         <option value="$PROJECT_DIR$/ionic/bower.json" />
-        <option value="$PROJECT_DIR$/ionic/www/index.html" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/config/cors.php" />
         <option value="$PROJECT_DIR$/ionic/www/templates/login.html" />
@@ -15517,6 +15539,15 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/ionic/www/js/controllers/login.controller.js" />
+        <option value="$PROJECT_DIR$/ionic/www/js/controllers/client/checkoutDetail.controller.js" />
+        <option value="$PROJECT_DIR$/ionic/www/js/controllers/client/viewProduct.controller.js" />
+        <option value="$PROJECT_DIR$/ionic/www/index.html" />
+        <option value="$PROJECT_DIR$/ionic/www/templates/client/checkout.html" />
+        <option value="$PROJECT_DIR$/ionic/www/templates/client/checkout-detail.html" />
+        <option value="$PROJECT_DIR$/ionic/www/templates/client/view-product.html" />
+        <option value="$PROJECT_DIR$/ionic/www/js/controllers/client/checkout.controller.js" />
+        <option value="$PROJECT_DIR$/ionic/www/js/controllers/client/checkout-detail.controller.js" />
+        <option value="$PROJECT_DIR$/ionic/www/js/controllers/client/view-product.controller.js" />
         <option value="$PROJECT_DIR$/ionic/www/js/app.js" />
       </list>
     </option>
@@ -15621,6 +15652,54 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code-delivery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code-delivery" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ionic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code-delivery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code-delivery" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ionic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -15648,6 +15727,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code-delivery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code-delivery" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ionic" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -15755,12 +15864,12 @@
       <workItem from="1483281383399" duration="45000" />
       <workItem from="1483407013117" duration="1287000" />
       <workItem from="1483464642142" duration="7900000" />
-      <workItem from="1483538720840" duration="1483000" />
+      <workItem from="1483538720840" duration="3476000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82064000" />
+    <option name="totallyTimeSpent" value="84057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
@@ -15800,48 +15909,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/OAuthClientTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/OrderRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="90" column="42" lean-forward="false" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/ClientRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_12_22_171717_create_cupoms_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -16008,13 +16075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ionic/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="42" column="42" lean-forward="false" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
@@ -16121,18 +16181,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ionic/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="41" column="76" lean-forward="true" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ionic/www/templates/client/checkout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ionic/www/templates/client/view-products.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ionic/www/templates/client/checkout-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ionic/www/js/controllers/login.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ionic/www/js/controllers/client/checkout.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ionic/www/js/controllers/client/view-product.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="39" lean-forward="false" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ionic/www/js/controllers/client/checkout-detail.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="41" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ionic/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="75" column="43" lean-forward="false" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+        <state relative-caret-position="582">
+          <caret line="77" column="24" lean-forward="false" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
           <folding />
         </state>
       </provider>

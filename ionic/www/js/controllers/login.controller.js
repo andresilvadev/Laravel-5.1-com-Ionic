@@ -1,4 +1,4 @@
-angular.module('deliveryApp.controllers',[])
+angular.module('deliveryApp.controllers')
     .controller('LoginCtrl',['$scope','OAuth','$cookies','$ionicPopup','$state', function ($scope,OAuth,$cookies,$ionicPopup,$state) {
 
         $scope.user = {     // Garantindo que os campos do formulário estejam vázios

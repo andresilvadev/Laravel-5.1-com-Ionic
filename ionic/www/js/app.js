@@ -7,7 +7,7 @@
 
 angular.module('deliveryApp.controllers',[]); // Criando módulo de controllers
 
-angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','angular-oauth2'])
+angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','angular-oauth2','ngResource'])
 
 .constant('appConfig',{
     baseUrl: 'http://localhost:8000'

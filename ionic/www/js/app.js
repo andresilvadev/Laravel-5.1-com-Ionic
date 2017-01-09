@@ -6,8 +6,9 @@
 // the 2nd parameter is an array of 'requires'
 
 angular.module('deliveryApp.controllers',[]); // Criando módulo de controllers
+angular.module('deliveryApp.services',[]); // Criando módulo de services
 
-angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','angular-oauth2','ngResource'])
+angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','deliveryApp.services','angular-oauth2','ngResource'])
 
 .constant('appConfig',{
     baseUrl: 'http://localhost:8000'
@@ -66,7 +67,7 @@ angular.module('deliveryApp', ['ionic', 'deliveryApp.controllers','angular-oauth
         .state('client',{   // Criando uma rota abstrata, serve para intermediar o fluxo, e portanto não pode ser acessada
             abstract: true,
             url: '/client',
-            template: '<ui-view/>'
+            template: '<ion-nav-view/>'
         })
         .state('client.checkout',{
             url: '/checkout',

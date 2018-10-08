@@ -23,11 +23,11 @@ class ClientProductController extends Controller
      */
     public function index()
     {
-        $produtcs = $this->productRepository
+        $products = $this->productRepository
             ->skipPresenter(false)
             ->all();
 
-        return $produtcs;
+        return $products;
     }
 
 }
